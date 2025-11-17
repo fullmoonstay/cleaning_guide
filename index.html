@@ -10,297 +10,676 @@
             padding: 0;
             box-sizing: border-box;
         }
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 20px;
-        line-height: 1.6;
-    }
 
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 30px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        overflow: hidden;
-    }
-
-    .header {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        color: white;
-        padding: 40px 30px;
-        text-align: center;
-    }
-
-    .header h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
-
-    .header p {
-        font-size: 1.1em;
-        opacity: 0.9;
-    }
-
-    .content {
-        padding: 30px;
-    }
-
-    .section {
-        background: #f8f9ff;
-        border-radius: 20px;
-        padding: 25px;
-        margin-bottom: 25px;
-        border-left: 5px solid #667eea;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        transition: transform 0.2s;
-    }
-
-    .section:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    .section-title {
-        font-size: 1.5em;
-        color: #667eea;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .section-title .emoji {
-        font-size: 1.3em;
-    }
-
-    .step-number {
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        color: white;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        margin-right: 10px;
-        font-size: 0.9em;
-    }
-
-    .subsection {
-        background: white;
-        border-radius: 15px;
-        padding: 20px;
-        margin: 15px 0;
-        border: 2px solid #e8ecff;
-    }
-
-    .subsection-title {
-        font-weight: bold;
-        color: #764ba2;
-        margin-bottom: 12px;
-        font-size: 1.1em;
-    }
-
-    .checkbox-item {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        margin: 8px 0;
-        background: #fff;
-        border-radius: 10px;
-        border: 2px solid #e8ecff;
-        transition: all 0.2s;
-    }
-
-    .checkbox-item:hover {
-        background: #f8f9ff;
-        border-color: #667eea;
-    }
-
-    .checkbox-item input[type="checkbox"] {
-        width: 20px;
-        height: 20px;
-        margin-right: 12px;
-        cursor: pointer;
-        accent-color: #667eea;
-    }
-
-    .important-box {
-        background: linear-gradient(135deg, #fff5f5, #ffe5e5);
-        border-left: 5px solid #f5576c;
-        padding: 15px;
-        border-radius: 10px;
-        margin: 15px 0;
-    }
-
-    .important-box strong {
-        color: #f5576c;
-    }
-
-    .warning-box {
-        background: linear-gradient(135deg, #fff9e6, #ffecb3);
-        border-left: 5px solid #ffa726;
-        padding: 15px;
-        border-radius: 10px;
-        margin: 15px 0;
-    }
-
-    .success-box {
-        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-        border-left: 5px solid #4caf50;
-        padding: 15px;
-        border-radius: 10px;
-        margin: 15px 0;
-    }
-
-    ul {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    ul li {
-        padding: 8px 0 8px 30px;
-        position: relative;
-    }
-
-    ul li:before {
-        content: "✨";
-        position: absolute;
-        left: 5px;
-    }
-
-    .final-checklist {
-        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-        border-radius: 20px;
-        padding: 25px;
-        margin-top: 30px;
-    }
-
-    .final-checklist h3 {
-        color: #1976d2;
-        margin-bottom: 20px;
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .contact-box {
-        background: linear-gradient(135deg, #f3e5f5, #e1bee7);
-        border-radius: 20px;
-        padding: 25px;
-        margin-top: 25px;
-    }
-
-    .footer {
-        background: #667eea;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 30px;
-        border-radius: 0 0 30px 30px;
-    }
-
-    .checkbox-item input[type="checkbox"]:checked + label {
-        text-decoration: line-through;
-        opacity: 0.6;
-        color: #999;
-    }
-
-    .progress-bar-container {
-        background: #e0e0e0;
-        border-radius: 20px;
-        height: 30px;
-        margin: 20px 0;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .progress-bar {
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        height: 100%;
-        width: 0%;
-        transition: width 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: bold;
-        font-size: 0.9em;
-    }
-
-    @media print {
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
             background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
+
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            background: #f8f9ff;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
         .section:hover {
-            transform: none;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
-    }
 
-    .badge {
-        display: inline-block;
-        background: #667eea;
-        color: white;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.85em;
-        font-weight: bold;
-        margin-left: 10px;
-    }
+        .section-title {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .steps-list {
-        counter-reset: step-counter;
-    }
+        .section-title .emoji {
+            font-size: 1.3em;
+        }
 
-    .steps-list li {
-        counter-increment: step-counter;
-        padding-left: 40px;
-    }
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
 
-    .steps-list li:before {
-        content: counter(step-counter);
-        background: linear-gradient(135deg, #f093fb, #f5576c);
-        color: white;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        left: 5px;
-        font-weight: bold;
-        font-size: 0.85em;
-    }
+        .subsection {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid #e8ecff;
+        }
 
-    .download-btn {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        color: white;
-        padding: 15px 30px;
-        border-radius: 50px;
-        border: none;
-        font-size: 1.1em;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        transition: all 0.3s;
-        z-index: 1000;
-    }
+        .subsection-title {
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
 
-    .download-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
-    }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 8px 0;
+            background: #fff;
+            border-radius: 10px;
+            border: 2px solid #e8ecff;
+            transition: all 0.2s;
+        }
 
-    .download-btn:active {
-        transform: translateY(-1px);
-    }
-</style>
-</body>
-</html>
+        .checkbox-item:hover {
+            background: #f8f9ff;
+            border-color: #667eea;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            opacity: 0.6;
+            color: #999;
+        }
+
+        .important-box {
+            background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+            border-left: 5px solid #f5576c;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important-box strong {
+            color: #f5576c;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff9e6, #ffecb3);
+            border-left: 5px solid #ffa726;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "✨";
+            position: absolute;
+            left: 5px;
+        }
+
+        .final-checklist {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .final-checklist h3 {
+            color: #1976d2;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 25px;
+        }
+
+        .footer {
+            background: #667eea;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .progress-bar-container {
+            background: #e0e0e0;
+            border-radius: 20px;
+            height: 30px;
+            margin: 20px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .steps-list {
+            counter-reset: step-counter;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+            padding-left: 40px;
+        }
+
+        .steps-list li:before {
+            content: counter(step-counter);
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 5px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .download-btn:active {
+            transform: translateY(-1px);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .section:hover {
+                transform: none;
+            }
+            .download-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadHTML()">📥 HTML 다운로드</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🏠 에어비앤비 청소 매뉴얼</h1>
+            <p>청소실장님을 위한 완벽 가이드 ✨</p>
+        </div>
+
+        <div class="content">
+            <!-- 진행률 표시 -->
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar">0% 완료</div>
+            </div>
+
+            <!-- 준비사항 -->
+            <div class="section">
+                <h2 class="section-title"><span class="emoji">📋</span> 청소 전 준비사항</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">1</span>입장 및 현장 확인</div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">공동현관문 사진 촬영</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">호실 비밀번호 입력 (CCTV 설치되어 있음)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">호실 사진 촬영</label>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">2</span>보일러 및 에어컨 확인</div>
+                    <div class="important-box">
+                        <strong>⚠️ 중요: 반드시 사진 촬영 후 전송</strong>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">✅ 보일러 온수: <strong>켜짐</strong> 상태 확인</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">❌ 보일러 난방: <strong>꺼짐</strong> 상태 확인</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">사진을 찍어서 보내주세요</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 침구 및 수건 -->
+            <div class="section">
+                <h2 class="section-title"><span class="emoji">🛏️</span> 침구 및 수건 관리</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">3</span>수건 세탁 준비</div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check7">
+                        <label for="check7">방에 있는 수건 전부 수거</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check8">
+                        <label for="check8">화장실에 있는 수건 전부 수거</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check9">
+                        <label for="check9">세탁기에 모두 넣기</label>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">4</span>침구류 점검 <span class="badge">작은 방, 큰 방 모두</span></div>
+                    
+                    <p style="font-weight: bold; margin: 15px 0;">📌 점검 항목:</p>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check10">
+                        <label for="check10">베개커버 오염 확인</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check11">
+                        <label for="check11">이불커버 오염 확인</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check12">
+                        <label for="check12">침대 시트 오염 확인</label>
+                    </div>
+
+                    <p style="font-weight: bold; margin: 15px 0;">🔄 세탁이 필요한 경우:</p>
+                    <ul>
+                        <li>침대 아래 서랍에서 여분의 커버와 베개 꺼내기</li>
+                        <li>오염된 침구류 교체</li>
+                    </ul>
+
+                    <p style="font-weight: bold; margin: 15px 0;">🧽 오염이 경미한 경우:</p>
+                    <ul class="steps-list">
+                        <li>물티슈에 주방세제 묻히기</li>
+                        <li>오염 부분을 여러 번 문질러 닦기</li>
+                        <li>깨끗한 물티슈로 10회 정도 다시 닦기</li>
+                    </ul>
+
+                    <p style="font-weight: bold; margin: 15px 0;">🌟 이불 관리:</p>
+                    <ul class="steps-list">
+                        <li>덮은 이불을 3-4회 들어서 털어주기</li>
+                        <li>돌돌이로 머리카락과 먼지 제거 (주방 식탁 아래 위치)</li>
+                        <li>페브리즈 뿌려 마무리</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 세탁기 -->
+            <div class="section">
+                <h2 class="section-title"><span class="emoji">🧺</span> 세탁기 사용법</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">5</span>세탁 진행</div>
+                    <ul class="steps-list">
+                        <li>세제 적당량 투입</li>
+                        <li>휠을 돌려 <strong>스피드워시 모드</strong> 선택</li>
+                        <li>세탁 시작</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <strong>⚠️ 에러 발생 시:</strong><br>
+                        • 사진 촬영 후 즉시 전송<br>
+                        • 수도꼭지 등 다른 것은 건드리지 마세요
+                    </div>
+                </div>
+            </div>
+
+            <!-- 쓰레기 처리 -->
+            <div class="section">
+                <h2 class="section-title"><span class="emoji">🗑️</span> 쓰레기 처리</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">6</span>쓰레기통 비우기</div>
+                    
+                    <p style="font-weight: bold; margin-bottom: 10px;">📍 위치별 쓰레기통:</p>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check13">
+                        <label for="check13">거실 쓰레기통</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check14">
+                        <label for="check14">작은 방 쓰레기통</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check15">
+                        <label for="check15">화장실 쓰레기통</label>
+                    </div>
+
+                    <p style="font-weight: bold; margin: 15px 0;">🔄 비닐 교체 기준:</p>
+                    <ul>
+                        <li><strong>작은 방:</strong> 쓰레기가 없거나 조금만 있으면 비닐 교체 X</li>
+                        <li><strong>거실/화장실:</strong> 비닐째로 버리고 새 비닐로 교체</li>
+                    </ul>
+
+                    <div class="important-box">
+                        <strong>📌 종량제 봉투 사용:</strong><br>
+                        • 일반쓰레기는 반드시 종량제 봉투 사용<br>
+                        • 종량제 봉투 잔여 수량 체크 후 보고<br>
+                        • [봉투 교체 방법 영상 참고]
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">7</span>분리수거</div>
+                    
+                    <p style="font-weight: bold; margin-bottom: 10px;">♻️ 분리수거 방법:</p>
+                    <ul>
+                        <li>종이가방 또는 비닐봉투 사용 (게스트가 두고 간 것 활용)</li>
+                        <li>종량제 봉투에 넣지 않기</li>
+                        <li><strong>분리 항목:</strong> 종이, 플라스틱, 병, 캔류</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <strong>📍 쓰레기 버리는 장소:</strong><br>
+                        ✅ 문을 바라보고 <strong>오른쪽</strong><br>
+                        ❌ 왼쪽에 버리지 마세요
+                    </div>
+                </div>
+            </div>
+
+            <!-- 바닥 청소 -->
+            <div class="section">
+                <h2 class="section-title"><span class="emoji">🧹</span> 바닥 청소</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">8</span>바닥 청소 진행</div>
+                    
+                    <p style="font-weight: bold; margin-bottom: 10px;">✨ 기본 청소:</p>
+                    <ul>
+                        <li>유선청소기로 전체 바닥 청소</li>
+                        <li>고무빗자루로 세부 청소</li>
+                        <li>현관도 함께 청소</li>
+                    </ul>
+
+                    <p style="font-weight: bold; margin: 15px 0;">💧 먼지가 많은 경우:</p>
+                    <ul class="steps-list">
+                        <li>밀대 물걸레 사용 (스프레이형)</li>
+                        <li>물통에 물 채우기</li>
+                        <li>손잡이를 눌러 물 분사하며 청소</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 화장실 청소 -->
+            <div class="section">
+                <h2 class="section-title"><span class="emoji">🚽</span> 화장실 청소</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">9</span>화장실 청소 순서</div>
+                    
+                    <p style="font-weight: bold; margin-bottom: 10px;">🎯 준비:</p>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check16">
+                        <label for="check16">화장실 창문 열기</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check17">
+                        <label for="check17">두루마리 휴지 재고 확인</label>
+                    </div>
+
+                    <p style="font-weight: bold; margin: 15px 0;">🧼 청소 진행:</p>
+                    <ul class="steps-list">
+                        <li>샤워기를 틀어 변기, 벽면, 바닥, 세면대에 물 뿌리기</li>
+                        <li>변기솔로 변기 내부 청소</li>
+                        <li>곰팡이나 심한 오염: 싱크대 아래 세제 + 브러쉬로 청소</li>
+                        <li>휴지나 사용한 수건으로 세면대 수전 닦기 (얼룩 없이)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 수건 세팅 -->
+            <div class="section">
+                <h2 class="section-title"><span class="emoji">👕</span> 수건 세팅</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">10</span>수건 정리</div>
+                    
+                    <p style="font-weight: bold; margin-bottom: 10px;">🧺 건조기에서 수건 꺼내기:</p>
+                    <ul>
+                        <li>지정된 수량만큼 각 위치에 세팅</li>
+                        <li>작은 방 옷걸이 활용</li>
+                        <li>나머지 수건은 개어서 침대 아래 서랍에 보관</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 주방 청소 -->
+            <div class="section">
+                <h2 class="section-title"><span class="emoji">🍽️</span> 주방 청소</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title"><span class="step-number">11</span>주방 정리 및 청소</div>
+                    
+                    <p style="font-weight: bold; margin-bottom: 10px;">🍴 설거지:</p>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check18">
+                        <label for="check18">싱크대에 있는 컵 깨끗이 씻기</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check19">
+                        <label for="check19">남은 물과 음식 전부 버리기</label>
+                    </div>
+
+                    <p style="font-weight: bold; margin: 15px 0;">🗑️ 음식물 쓰레기:</p>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check20">
+                        <label for="check20">가스레인지 쪽 음식물 쓰레기통 확인</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check21">
+                        <label for="check21">싱크대 음식물 거름망 확인</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="check22">
+                        <label for="check22">음식물은 일반쓰레기로 분류 (종량제 봉투)</label>
+                    </div>
+
+                    <p style="font-weight: bold; margin: 15px 0;">✨ 식탁 청소:</p>
+                    <ul class="steps-list">
+                        <li>소독약 뿌리기</li>
+                        <li>물티슈나 행주로 깨끗이 닦기</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 최종 체크리스트 -->
+            <div class="final-checklist">
+                <h3>✅ 최종 체크리스트</h3>
+                <p style="text-align: center; margin-bottom: 20px; color: #1976d2; font-weight: bold;">청소 완료 전 최종 확인</p>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final1">
+                    <label for="final1">보일러 설정 확인 및 사진 전송</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final2">
+                    <label for="final2">침구류 오염 확인 및 교체</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final3">
+                    <label for="final3">세탁기 가동</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final3-1">
+                    <label for="final3-1">건조기 동작</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final4">
+                    <label for="final4">쓰레기통 비우기 (3곳)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final5">
+                    <label for="final5">종량제 봉투 잔여 수량 확인 및 보고</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final6">
+                    <label for="final6">분리수거 완료</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final7">
+                    <label for="final7">바닥 청소 (현관 포함)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final8">
+                    <label for="final8">화장실 청소 및 휴지 확인</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final9">
+                    <label for="final9">수건 세팅</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final10">
+                    <label for="final10">주방 정리 및 청소</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final11">
+                    <label for="final11">식탁 소독</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="final12">
+                    <label for="final12">모든 창문 확인 (화장실 창문 열림 상태)</label>
+                </div>
+            </div>
+
+            <!-- 문의 및 보고 -->
+            <div class="contact-box">
+                <h3 style="color: #7b1fa2; margin-bottom: 15px;">📞 문의 및 보고사항</h3>
+                
+                <div class="success-box">
+                    <strong>📸 사진 전송 필수:</strong><br>
+                    • 공동현관문<br>
+                    • 호실 입구<br>
+                    • 보일러 설정 상태<br>
+                    • 세탁기 에러 발생 시
+                </div>
+
+                <div class="success-box">
+                    <strong>📝 보고사항:</strong><br>
+                    • 종량제 봉투 잔여 수량<br>
+                    • 침구류 교체 여부<br>
+                    • 특이사항 발생 시
+                </div>
+            </div>
+
+            <!-- 주의사항 -->
+            <div class="section" style="background: linear-gradient(135deg, #fff9e6, #ffecb3); border-left-color: #ff6b6b;">
+                <h2 class="section-title" style="color: #ff6b6b;"><span class="emoji">⚠️</span> 주의사항</h2>
+                <ul>
+                    <li>CCTV가 설치되어 있으니 유의하세요</li>
+                    <li>세탁기 에러 시 수도꼭지 등 건
